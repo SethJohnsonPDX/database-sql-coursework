@@ -1,10 +1,12 @@
 USE db_lms_seth;
 
-UPDATE tbl_library_branch 
-SET BranchAddress = '1234 SE Pen St.',
-	BranchName = 'South'
-WHERE BranchId = 5;
-
+INSERT INTO tbl_library_branch (BranchName, BranchAddress)
+	VALUES ('Southwest', '1234 SW Read St.'),
+			('Northwest', '1234 NW Book St.'),
+			('Central', '1234 N Melville St.'),
+			('Sharpstown', '1234 SE Main St.'),
+			('South', '1234 SE Pen St.')
+;
 SELECT * FROM tbl_library_branch;
 
 INSERT INTO tbl_borrower (BorrowName, BorrowAddress, BorrowPhone)
@@ -15,7 +17,9 @@ INSERT INTO tbl_borrower (BorrowName, BorrowAddress, BorrowPhone)
 			('James Oher','2020 SW Burnside Ave', '5034558878'),
 			('Xavier Smith','130 S LaSalle St.', '2087789761'),
 			('Andrew Summers','3456 SE Pascal St.', '2189983423'),
-			('Charles Bradley','4444 W Park Ave', '5032237866')
+			('Charles Bradley','4444 W Park Ave', '5032237866'),
+			('Sam Johnson','4905 36th Ave S', '6127860425'),
+			('David Skodje','1244 Pleasant Ave SW', '6128879045')
 ;
 SELECT * FROM tbl_borrower;
 
@@ -49,7 +53,6 @@ INSERT INTO tbl_book (Title, PubId_Book)
 			('Midnight Children', 52),
 			('The Big Short', 53)
 ;
-
 SELECT * FROM tbl_book;
 
 
@@ -81,12 +84,12 @@ INSERT INTO tbl_book_loans (BookId_Loans, BranchId_Loans, CardNo_Loans, DateOut,
 	VALUES (1000, 1, 10000, '2016-10-01', '2016-07-24'),
 			(1001, 2, 10000, '2016-10-01', '2016-07-24'),
 			(1002, 3, 10000, '2016-10-01', '2016-07-24'),
-			(1003, 4, 10000, '2016-10-01', '2016-07-24'),
+			(1003, 4, 10000, '2016-10-01', '2017-07-19'),
 			(1004, 5, 10000, '2016-10-01', '2016-07-24'),
 			(1005, 1, 10000, '2016-10-01', '2016-07-24'),
 			(1006, 2, 10000, '2016-10-01', '2016-07-24'),
 			(1007, 3, 10001, '2016-10-01', '2016-07-24'),
-			(1008, 4, 10001, '2016-10-01', '2016-07-24'),
+			(1008, 4, 10001, '2016-10-01', '2017-07-19'),
 			(1009, 5, 10001, '2016-10-01', '2016-07-24'),
 			(1010, 1, 10001, '2016-10-01', '2016-07-24'),
 			(1011, 2, 10001, '2016-10-01', '2016-07-24'),
@@ -101,7 +104,7 @@ INSERT INTO tbl_book_loans (BookId_Loans, BranchId_Loans, CardNo_Loans, DateOut,
 			(1001, 1, 10002, '2016-10-01', '2016-07-24'),
 			(1002, 2, 10003, '2016-10-01', '2016-07-24'),
 			(1003, 3, 10003, '2016-10-01', '2016-07-24'),
-			(1004, 4, 10003, '2016-10-01', '2016-07-24'),
+			(1004, 4, 10003, '2016-10-01', '2017-07-19'),
 			(1005, 5, 10003, '2016-10-01', '2016-07-24'),
 			(1006, 1, 10003, '2016-10-01', '2016-07-24'),
 			(1007, 2, 10003, '2016-10-01', '2016-07-24'),
@@ -121,7 +124,7 @@ INSERT INTO tbl_book_loans (BookId_Loans, BranchId_Loans, CardNo_Loans, DateOut,
 			(1002, 1, 10005, '2016-10-01', '2016-07-24'),
 			(1003, 2, 10005, '2016-10-01', '2016-07-24'),
 			(1004, 3, 10005, '2016-10-01', '2016-07-24'),
-			(1005, 4, 10006, '2016-10-01', '2016-07-24'),
+			(1005, 4, 10006, '2016-10-01', '2017-07-19'),
 			(1006, 5, 10006, '2016-10-01', '2016-07-24'),
 			(1007, 1, 10006, '2016-10-01', '2016-07-24'),
 			(1008, 2, 10006, '2016-10-01', '2016-07-24'),
@@ -201,6 +204,4 @@ INSERT INTO tbl_book_copies(BookId_Copies, BranchId_Copies, No_Of_Copies)
 			(1005, 5, 3),
 			(1006, 5, 3)
 ;
-
-
 SELECT * FROM tbl_book_copies;
